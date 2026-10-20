@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Euchre Helper</title>
+   <style>
+      body { 
+         margin: 0px; 
+         padding: 0px;
+         background: #009d43;
+      }
+      .nav {
+         width: auto;
+         height: 30px;
+         background: #e7e7e7;
+         padding: 5px 10px;
+         margin: 0px;
+         border-right: 1px solid black;
+      }
+      .btn {
+         border-top: 2px solid white;
+         border-left: 2px solid white;
+         border-right: 2px solid black;
+         border-bottom: 2px solid black;
+         margin-left: 5px;
+         margin-bottom: 10px;
+         padding: 10px;
+         border-radius: 7px;
+         float: left;
+         width: 30px;
+         font-size: 20px;
+         font-weight: bold;
+      }
+      .score {
+         width: 32.8%;
+         height: auto;
+         float: left;
+         border: 1px solid black;
+         padding 20px 10px;
+         text-align: center;
+      }
+      #score1, #score2, #score3 {
+         font-size: 40px;
+         font-weight: bold;
+         display: block;
+         margin-top: 10px;
+         margin-bottom: 10px;
+      }
+      .team {
+         display: block; 
+         margin-top: 10px; 
+         font-size: 20px;
+      }
+      #trump div {
+         float: left;
+         border: 3px solid black;
+         text-align: center;
+         font-size: 45px;
+         width: 17%;
+         height: 60px;
+         margin-left: 5px;
+      }
+      #quick {
+         width: 300px;
+         margin: 10px auto;
+      }
+      .clear {clear: both;}
+      .b_red {background: #c9657d;}
+      .b_blue {background: #6588c9;}
+      .red {color: #9d0d27;}
+      
+   </style>
+</head>
+<body>
+   
+   
+   <!-- HTML HERE -->
+   <h2 class="nav"> Euchre Helper</h2>
+   <div class="score">
+      <b class="team">Team 1</b>
+      <span id="score1">0</span>
+      <div class="btn b_blue" onclick="app.add('score1');">+</div>
+      <div class="btn b_red" onclick="app.sub('score1');">-</div>
+      <br class="clear" />
+      <span id="bid1" onclick="app.toggle('bid1');" style="">Bid</span> &nbsp;&nbsp;|&nbsp;&nbsp; <span id="deal1" onclick="app.toggle('deal1');">Deal</span>
+      <br /><br />
+   </div>
+   <div class="score">
+      <b class="team">Team 2</b>
+      <span id="score2">0</span>
+      <div class="btn b_blue" onclick="app.add('score2');">+</div>
+      <div class="btn b_red" onclick="app.sub('score2');">-</div><br class="clear" />
+      <span id="bid2" onclick="app.toggle('bid2');" style="">Bid</span> &nbsp;&nbsp;|&nbsp;&nbsp; <span id="deal2" onclick="app.toggle('deal2');">Deal</span>
+      <br /><br />
+   </div>
+   <div class="score" style="background: darkgreen;">
+      <b class="team">Player 3</b>
+      <span id="score3">0</span>
+      <div class="btn b_blue" onclick="app.add('score3');">+</div>
+      <div class="btn b_red" onclick="app.sub('score3');">-</div>
+      <br class="clear" />
+      <span id="bid3" onclick="app.toggle('bid3');" style="">Bid</span> &nbsp;&nbsp;|&nbsp;&nbsp; <span id="deal3" onclick="app.toggle('deal3');">Deal</span>
+      <br /><br />
+   </div>
+   <br class="clear" /><br />
+   <div id="trump">
+      <div id="suit1" onclick="app.toggle2('suit1');">&spades;</div>
+      <div id="suit2" onclick="app.toggle2('suit2');" style="color: #9d0d27;">&hearts;</div>
+      <div id="suit3" onclick="app.toggle2('suit3');" style="color: #9d0d27;">&diams;</div>
+      <div id="suit4" onclick="app.toggle2('suit4');">&clubs;</div>
+      <div id="suit5" onclick="app.toggle2('suit5');">NO</div>
+   </div>
+   <br class="clear" />
+   <div id="quick">
+      <b>Quick Start</b> <br />
+      Trump: J J A K Q 10 9 (7 trump / hand)<br />
+      Non-Trump: A K Q J 10 9 <br />
+      Deal: 5 cards <br />
+      Dummy Hand: 3 Cards <br /> <br />
+      
+      <b>Scoring </b> <br />
+      Bidder 3 or 4 = 1pt <br />
+      Bidder March (All 5) = 2pt <br />
+      Bidder March Alone = 4pt <br />
+      Defenders Euchre (3+) = 2pt <br /> <br />
+      
+      <hr style="height: 0px; margin-tio 1px solid black;"'/>
+      
+      <b>Full Rules</b>  <br /><br />
+      
+      Euchre is a simplified, quick form of Bid Whist. Two person teams will play against each other until one team achieves ten points to win that game. The game format will be Round Robin with teams playing one game against each other.
+<br /><br />
+<b>THE DECK</b><br />
+The deck will consist of 24 cards, from nine to ace in all four suits.
+<br /><br />
+<b>THE DEAL</b><br />
+To select the first dealer, deal out one card face up to each player in turn and the first Jack will decide the dealer. After the first hand, the deal goes to the left around the table in turn. The dealer deals out five cards to each player, starting to the left, one card at a time. The remaining four cards are placed in a pile in front of the dealer with the top card turned up which is designated as the proposed trump.
+<br /><br />
+<b>THE ORDER OF TRUMP</b><br />
+● Right Bower (Jack of Trump)<br />
+● Left Bower (Jack of same color suit as Trump)<br />
+● Ace, King, Queen, Ten, and Nine of Trump
+<br /><br />
+<b>THE BIDDING</b><br />
+● The team winning the bid must be able to take at least three tricks out of the five possible tricks in order to score points. If the opposing team takes three or more tricks, then the bidding team has been “Euchred”.<br />
+● The player to the left of the dealer has the first option to take the bid with the turn-up as the trump suit. If that player passes the bid, it goes around the table with the dealer having the last opportunity to bid.<br />
+● The successful bidder must order the dealer to take up the turn-up trump card into the dealer’s hand, who then must discard a diferent card from their hand. However, if the dealer takes the bid with the turn-up suit as trump, the dealer must have a natural trump in hand, in order to pick up the turn-up. (The Left Bower is not a Natural Trump).<br />
+● If no one takes the bid, then the turn-up is dead and the bid goes around the table once more and the first player to name their own trump suit gets the bid. (The original turn-up suit cannot be used.) Players may also call for "No Trump" during the second round of bidding. In that case all suits play as Ace high.<br />
+● If no one takes the bid after this round, the cards are thrown in and the deal goes to the next player tostart the bidding process all over again.<br />
+● The winner of the bid may choose to “Go Alone”, which means the bidder’s partner will not play in that hand. “Going Alone” must be declared upon winning the bid.
+<br /><br />
+<b>THE PLAY</b><br />
+● Play begins with the player to the left of the dealer, regardless of who won the bid.<br />
+● Subsequent players must follow the suit led by the first player, if possible.<br />
+● If a player can’t follow suit, then they may play a trump card to try and take the trick or use another suit to throw away.<br />
+● The highest card in the suit led or the highest trump will take the trick.
+<br /><br />
+<b>RENEGING</b><br />
+If a player is caught reneging (not following suit when able) the opposing team will automatically receive two points, or four if the other team was playing “Alone”, unless the mistake is corrected before that particular hand is finished.
+<br /><br />
+<b>THE SCORING</b><br />
+● Bidding team<br />
+- 3 or 4 tricks = 1 point<br />
+- 5 tricks (March) = 2 points<br />
+● Opposing team<br />
+- 3 or 4 tricks (Euchre) = 2 points
+● Going Alone team <br />
+- 3 or 4 tricks = 1 point
+- 5 tricks = 4 points
+<br /><br />
+<b>2 OR 3 PLAYERS</b><br />
+1- For a missing partner or partners, deal a 3 card dummy hand.<br />
+2- After the bid, players pick up the dummy hand and select what cards they wish to keep. (The bid winner gets the dummy hand in 3 handed, the other 2 players are temporary partners for that hand.) Then they discard back down to a 5 card hand.<br />
+3- A player may still "go alone" by not looking at the dummy hand for 4 points on a March.
+<br /><br />
+<b>KITTY SIZE</b><br />
+4 players: 4<br />
+3 players: 6 (+3 for dummy hand = 9)<br />
+2 players: 8 (+6 for dummy hands = 14)
+   <br />
+   <br />
+   <b>SAMPLE HAND</b><br />
+      Proposed Trump: 9&clubs;<br />
+      Player 1: Q&spades; <span class="red">10&hearts;</span> K&clubs; Q&clubs; <span class="red">9&diams;</span> (Don't Bid)<br />
+      Player 2: 10&spades; <span class="red">Q&hearts; 9&hearts;</span> 10&clubs; <span class="red">J&diams;</span> (Don't Bid)<br />
+      Player 3: J&clubs; J&spades; A&clubs; <span class="red">J&hearts;</span> K&spades; (Pick it Up!)<br />
+      Player 4: <span class="red">K&diams; 10&diams;</span> A&spades; <span class="red">A&hearts; K&hearts;</span> ("No Trump" bid)<br />
+   </div>
+   <br /><br /><br /><br />
+   
+   
+   <!-- JAVASCRIPT HERE -->
+<script>
+   const app = {
+      get: (id_in) => {
+         return document.getElementById(id_in);
+      },
+      add: (id_in) => {
+         let tmp = parseInt(app.get(id_in).innerText) + 1;
+         app.get(id_in).innerText = tmp;
+      },
+      sub: (id_in) => {
+         let tmp = parseInt(app.get(id_in).innerText) - 1;
+         app.get(id_in).innerText = tmp;
+      },
+      toggle: (id_in) => {
+         let tmp = app.get(id_in);
+         console.log(tmp.style);
+         if (app.get(id_in).style.fontWeight == "") {
+            app.get(id_in).style.fontWeight ="bold";
+            app.get(id_in).style.color = "#9d0d27";
+         } else {
+            app.get(id_in).style.fontWeight = "";
+            app.get(id_in).style.color = "";
+            
+         }
+      },
+      toggle2: (id_in) => {
+         let tmp = app.get(id_in);
+         console.log(tmp.style);
+         if (app.get(id_in).style.borderColor == "") {
+            app.get(id_in).style.borderColor = "#9d0d27";
+         } else {
+            app.get(id_in).style.borderColor = "";
+            
+         }
+      }
+   };
+</script>
+</body>
+</html>
