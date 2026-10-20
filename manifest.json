@@ -1,7 +1,7 @@
 {
   "name": "Euchre Helper",
   "short_name": "Euchre",
-  "start_url": "euchre_helper.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color":"#e7e7e7",
   "theme_color":"black",
