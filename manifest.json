@@ -1,9 +1,9 @@
 {
   "name": "Euchre Helper",
-  "short_name": "Euchre",
+  "short_name": "Euchre Help",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color":"#e7e7e7",
+  "background_color":"#009d43",
   "theme_color":"black",
   "scope": ".",
   "description":"This PWA has tools to make playing the card game Euchre easier.",
