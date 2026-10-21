@@ -1,6 +1,6 @@
 {
   "name": "Euchre Helper",
-  "short_name": "Euchre Help",
+  "short_name": "Euchre Helper",
   "start_url": "index.html",
   "display": "standalone",
   "background_color":"#009d43",
